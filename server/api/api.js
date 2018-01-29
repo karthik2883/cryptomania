@@ -12,7 +12,7 @@ app.set('views', __dirname + '/view');
 app.engine('html', engine.mustache);
 app.set('view engine', 'html');
 //generic functionality with api docs
-//
+//fetch from database and list as json
 app.get('/check', function (req, res) {
     res.send('welcome to cryptomania');
 });
