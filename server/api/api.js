@@ -7,6 +7,8 @@ const path = require('path');
 const app = express();
 const engine = require('consolidate');
 
+var port = process.env.apiport || 3000;
+
 app.use(express.static(path.join(__dirname, 'view')));
 app.set('views', __dirname + '/view');
 app.engine('html', engine.mustache);
@@ -19,5 +21,5 @@ app.get('/check', function (req, res) {
 
 process.setMaxListeners(0);
 const server = http.createServer(app);
-server.listen(8000);
+server.listen(port);
  
